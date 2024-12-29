@@ -1,0 +1,43 @@
+﻿@using CourseWork2.EFModels;
+
+@model Brand
+
+@{
+    ViewData["Title"] = "Add Brand";
+}
+<h2>Add Brand</h2>
+<div class="brand-input">
+    <form asp-action="Create" method="post">
+
+        <label asp-for="BrandName">Brand Name</label>
+        <input asp-for="BrandName" class="form-control" />
+        <span asp-validation-for="BrandName" class="text-danger"></span>
+
+        <label asp-for="BrandFounder">Brand Founder</label>
+        <input asp-for="BrandFounder" class="form-control" />
+        <span asp-validation-for="BrandFounder" class="text-danger"></span>
+
+        <label asp-for="BrandCreationDate">Creation Date</label>
+        <input asp-for="BrandCreationDate" class="form-control" type="date" />
+        <span asp-validation-for="BrandCreationDate" class="text-danger"></span>
+
+        <label asp-for="BrandCountry">Country</label>
+        <input asp-for="BrandCountry" class="form-control" />
+        <span asp-validation-for="BrandCountry" class="text-danger"></span>
+
+        <label asp-for="BrandMainOfficeAddress">Main Office Address</label>
+        <textarea asp-for="BrandMainOfficeAddress" class="form-control"></textarea>
+        <span asp-validation-for="BrandMainOfficeAddress" class="text-danger"></span>
+
+        <label asp-for="BrandLogo">Logo (URL)</label>
+        <input asp-for="BrandLogo" class="form-control" type="url" />
+        <span asp-validation-for="BrandLogo" class="text-danger"></span>
+
+        <label asp-for="BrandSite">Website</label>
+        <input asp-for="BrandSite" class="form-control" type="url" />
+        <span asp-validation-for="BrandSite" class="text-danger"></span>
+
+        <br />
+        <input type="submit" value="Submit" class="btn btn-primary" />
+    </form>
+</div>

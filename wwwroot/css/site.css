@@ -1,0 +1,447 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
+  color: var(--bs-secondary-color);
+  text-align: end;
+}
+
+.form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
+  text-align: start;
+}
+
+
+
+
+
+.index-main 
+{
+
+}
+.find-container {
+    position: relative;
+    width: 600px;
+}
+a
+{
+    text-decoration: none;
+    cursor: pointer;
+}
+.find-input {
+    width: 100%;
+    border-radius: 35px;
+    border: 1px solid black;
+    padding: 10px 20px;
+    font-size: 22px;
+    box-sizing: border-box;
+}
+.cart-img 
+{
+    width: 50px;
+    height: 50px;
+    margin: 0 25px 0 0;
+    cursor: pointer;
+}
+.find {
+    position: absolute;
+    top: 48%;
+    right: 5px;
+    transform: translateY(-50%);
+    font-size: 32px;
+    background-color: white;
+    border: none;
+    border-radius: 180px;
+    cursor: pointer;
+    z-index: 1000;
+    filter: grayscale(100%);
+}
+.find-filters
+{
+    display:flex;
+    justify-content: center;
+    align-content: center;
+    margin: 25px;
+}
+p
+{
+    padding: 0;
+    margin: 0;
+}
+.shop-grid
+{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    border: 1px solid red;
+    grid-auto-rows: auto;
+}
+.shop-rating 
+{
+    color: rgb(42, 141, 156);
+    font-size: 26px;
+}
+.shop-item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 0 25px 0;
+    display: 0;
+}
+.shop-item:hover 
+{
+    cursor: pointer;
+    animation: itemAnimation 0.3s ease-in-out forwards;
+    box-shadow: 0 0 10px 3px grey;
+}
+.add-to-cart:hover {
+    background-color: rgb(42, 141, 156);
+    color: white;
+    border: none;
+}
+@keyframes itemAnimation {
+    0% {
+        box-shadow: 0 0 0 0 grey;
+    }
+
+    100% {
+        box-shadow: 0 0 10px 3px grey;
+    }
+}
+.shop-img
+{
+    width: 350px;
+    height: 450px;
+}
+.shop-name
+{
+    margin: 5px;
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+}
+.shop-brand 
+{
+    font-size: 18px;
+    margin: 5px 0 5px 0;
+    color: rgb(94, 89, 89);
+}
+.shop-price 
+{
+    padding: 15px 0 15px 0;
+}
+.shop-price-discount 
+{
+    color: rgb(213, 58, 64);
+    padding: 0 0 15px 0;
+}
+.shop-price-discounted
+{
+    padding: 15px 0 0 0;
+    color: grey;
+    text-decoration: line-through;
+}
+.add-to-cart {
+    width: 250px;
+    color: rgb(42, 141, 156);
+    border: 1px solid rgb(42, 141, 156);
+    background-color: transparent;
+    font-size: 18px;
+    padding: 10px;
+    transition: 0.5s;
+}
+.shop-description 
+{
+    color: rgb(94, 89, 89);
+    font-size: 14px;
+    text-align: center;
+    margin: 0 35px;
+}
+.details
+{
+    padding: 0 15vw 0 15vw;
+}
+.details-info 
+{
+    display: flex;
+}
+.details-fragrance-image 
+{
+    width: 350px;
+    height: 500px;
+}
+.description-brand-logo {
+    width: 225px;
+    height: 175px;
+}
+.details-rating {
+    background: linear-gradient(to right, rgb(234, 244, 246), white);
+    padding: 5px;
+    width: 350px;
+    font-size: 24px
+}
+.detail 
+{
+    color: rgb(51, 51, 51);
+    font-weight: bold;
+}
+.detail-p
+{
+    margin: 10px 0 0 0;
+}
+.details-cart
+{
+    position: absolute;
+    left: 1000px;
+    margin: 250px 0 0 25px;
+}
+.description-fragrance 
+{
+    color:rgb(51, 51, 51);
+    font-family: 'Roboto Slab', serif;
+    font-weight: bolder;
+    font-size: 32px;
+    margin: 25px 25px 25px 0;
+}
+.details-price {
+    font-size: 24px;
+    padding: 15px 0 15px 0;
+}
+
+.details-price-discount {
+    color: rgb(213, 58, 64);
+    font-size: 24px;
+    padding: 0 0 15px 0;
+}
+
+.details-price-discounted {
+    padding: 15px 0 0 0;
+    font-size: 20px;
+    color: grey;
+    text-decoration: line-through;
+}
+.details-description 
+{
+    margin: 35px 0 0 0;
+    width: 70%;
+}
+.details-description-text
+    {
+        font-size: 18px;
+    }
+.details-to-reviews {
+    color: rgb(42, 141, 156);
+    font-size: 20px;
+    border: none;
+    border-style: none;
+    background-color: transparent;
+}
+.details-reviews-head
+{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 75px;
+    width: 70%;
+}
+
+.brands
+{
+    padding: 20px;
+    gap: 25px;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+}
+.brand-logo
+{
+    width: 250px;
+    height: 250px;
+}
+.brand-description-logo 
+{
+    width: 500px;
+    height: 350px;
+}
+.filter-group
+{
+    font-size: 26px; 
+    margin: 0 15px;
+}
+.input-radio 
+{
+    height: 25px;
+    width: 25px;
+}
+.add-brand-btn-class, .add-fragrance-btn-class, .add-customer-btn-class {
+    margin: 0 0 25px 0;
+    padding: 0 50px;
+}
+.delete-fragrance, .delete-brand{
+    position: absolute;
+    text-decoration: none;
+    color: grey;
+    top: 0;
+    opacity: 0;
+    right: 15px;
+    font-size: 36px;
+    transition: 1s;
+}
+*:hover > .delete-fragrance, *:hover > .delete-brand {
+    opacity: 1;
+}
+.customer
+{
+    margin: 25px 325px 0 325px;
+    display: flex;
+}
+.cart-fragrance
+{
+    margin: 5px 35px;
+    display:flex;
+    justify-content: space-between;
+}
+.cart
+{
+    height: 500px;
+    width: 70%;
+}
+.cart-send {
+    padding: 125px 30px;
+    width: 25%;
+    background-color: rgb(247, 247, 247);
+}
+.cart-p
+{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 18px;
+    margin: 15px 0 15px 0;
+    display: flex;
+    justify-content: space-between
+}
+.cart-bp {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 26px;
+    margin: 25px 0 25px 0;
+    display: flex;
+    justify-content: space-between
+}
+.add-order {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    width: 100%;
+    color: white;
+    border: 1px solid rgb(42, 141, 156);
+    background-color: rgb(42, 141, 156);
+    font-size: 22px;
+    font-weight: bold;
+    padding: 10px;
+}
+.add-order:hover
+{
+    transition: 0.5s ease;
+    border: 1px solid white;
+    background-color: rgb(14, 109, 142);
+    color: white;
+}
+.fragrance-input, .brand-input, .customer-input, .review-input
+{
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    padding: 5px 15vw
+}
+.delete-customer-customers
+{
+    color: blue;
+    font-size: 20px;
+}
+.delete-customer-customers:hover
+{
+    color: rgb(5, 72, 230);
+}
+.remove-fragrance, .remove-brand, .description-send-review {
+    width: 250px;
+    color: black;
+    border: 1px solid black;
+    opacity: 1;
+    display: block;
+    margin: 15px 0 0 0;
+    background-color: transparent;
+    font-size: 18px;
+    padding: 10px;  
+    transition: 0.5s;
+}
+    .remove-fragrance:hover, .description-send-review:hover, .remove-brand:hover{
+      
+        background-color: black;
+        color: white;
+        border: 1px solid black;
+    }
+h2
+{
+    margin-left: 150px;
+}
+.review
+{
+    display: flex;
+    width: 100%;
+    justify-content: space-between
+}
+.delete-review-btn {
+    width: 250px;
+    color: black;
+    border: 1px solid darkred;
+    display: block;
+    margin: 15px 0 0 0;
+    background-color: transparent;
+    font-size: 18px;
+    padding: 10px; 
+    transition: 0.5s;
+}
+.delete-review-btn:hover {
+
+    background-color: darkred;
+    color: white;
+    border: 1px solid black;
+}
+.cart-fragrance-short-info
+{
+    display:flex;
+
+}
+.cart-fragrance-price, .cart-fragrance-short-info, .cart-quantity {
+    font-size: 24px;
+}
+.cart-quantity
+{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+.cart-fragrance-price
+{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+}

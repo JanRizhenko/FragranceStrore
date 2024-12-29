@@ -1,0 +1,154 @@
+﻿@using CourseWork2.EFModels
+
+@model Fragrance
+
+
+@{
+    ViewData["Title"] = "Details";
+    List<Review> reviews = ViewData["Reviews"] as List<Review>;
+}
+
+<div class="details">
+    <div class="details-info">
+        <img class="details-fragrance-image" src="@Model.FragrancePhoto" alt="Error" />
+
+        <div class="details-fragrance-info">
+            <a onclick="window.location='/Brand/Details/@Model.BrandId'">
+                <div class="description-brand">
+                    
+                <p>
+                    <span style="font-size:20px" class="detail-description">@Model.Brand.BrandName</span>
+                </p>
+                    <img class="description-brand-logo" src="@Model.Brand.BrandLogo" alt="Brand Logo"/>
+                <p class="description-fragrance">
+                    @Model.FragranceName
+                </p>
+                </div>
+            </a>
+
+
+
+
+            <p style="color:grey">
+                Рейтинг:
+            </p>
+            <p class="details-rating">
+                <span style="margin-left: 15px">
+                    @Model.Rating
+                </span>
+
+
+
+
+                <span style="font-size:18px;color:grey;margin-left:10px">
+                    на основі <span class="details-to-reviews">@reviews.Count @(reviews.Count == 1 ? "відгуку" : "відгуків")</span>
+                </span>
+            </p>
+
+
+
+            <p class="detail-p">
+                <span class="detail">Країна походження:</span>
+                <span class="detail-description">@Model.Brand.BrandCountry</span>
+            </p>
+
+            <p class="detail-p">
+                <span class="detail">Стать:</span>
+                <span class="detail-description">
+                    @if (Model.Sex == 'F')
+                    {
+                        <text>для жінок</text>
+                    }
+                    else if (Model.Sex == 'M')
+                    {
+                        <text>для чоловіків</text>
+                    }
+                    else if (Model.Sex == 'U')
+                    {
+                        <text>для чоловіків, для жінок</text>
+                    }
+                </span>
+            </p>
+
+            <p class="detail-p">
+                <span class="detail">Група ароматів:</span>
+                <span class="detail-description">@Model.Smell</span>
+            </p>
+
+            <p class="detail-p">
+                <span class="detail">Головні ноти:</span>
+                <span class="detail-description">@Model.Notes</span>
+            </p>
+            <p class="detail-p">
+                <span class="detail">Область застосування:</span>
+                <span class="detail-description">
+                    @(Model.Price > 175 ? "для тіла" : "для шиї")
+                </span>
+            </p>
+        </div>
+
+            <div class="details-cart">
+                <p>
+                    <span style="font-size:12px;color:grey">ID товару:</span>
+                    <span style="font-size:14px;color:grey;">@Model.Id</span>
+                </p>
+                <p>
+                <span style="font-size:12px;color:grey">Залишилося:</span>
+                <span style="font-size:14px;color:grey;">@Model.Stock шт.</span>
+                </p>
+                <p style="color:grey;font-size: 24px; margin-top: 25px">
+                    Ціна:
+                </p>
+                @if (Model.DiscountPercentage > 0)
+                {
+                    <div style="margin-top: 10px">
+                    <span class="details-price-discounted">@Model.Price$</span>
+                    <span style="margin-left: 10px" class="details-price-discount">@((Model.Price * (1 - Model.DiscountPercentage / 100)))$</span>
+                    <p></p>
+                    </div>
+                }
+                else
+                {
+                    <p class="details-price">@Model.Price$</p>
+                }
+                
+            <a href="/Cart/Create/@Model.Id"><button class="add-to-cart">Додати в кошик</button></a>
+            <button onclick="window.location='/Fragrance/Delete/@Model.Id'" class="remove-fragrance">Видалити парфюм</button>
+            </div>
+    </div>
+    <div class="details-description">
+        <p style="font-weight:bold;font-size:26px">Опис</p>
+        <hr style="width: 75px">
+        <p class="details-description-text">@Model.Brand.BrandName @Model.FragranceName - @Model.FragranceDescription</p>
+    </div>
+
+    <div class="details-reviews-head"> 
+        <div style="width: 50%">
+            <p style="font-weight:bold;font-size:26px">Відгуки <span style="color: grey">(@reviews.Count)</span></p>
+            <p>Поділіться своїми враженнями про товар</p>
+        </div>
+        <div style="width: 50%;display: flex; justify-content: center">
+        <button onclick="window.location.href='@Url.Action("CreateReviewForm", "Review", new { fragranceId = Model.Id})'" class="description-send-review">Залишити відгук</button>
+        </div>
+    </div>
+        <div style="display:flex;margin: 35px 0 0 0; flex-direction:column">
+            <hr>
+        @foreach (var review in reviews)
+        {
+                <div class="review">
+                    <span style="font-size:24px; color:grey">@review.Customer.CustomerName @review.Customer.CustomerSurname <br />@review.Rating/5
+                        <p style="font-size: 20px; color: black">@review.ReviewText</p>
+                    </span>
+
+                    <span style="font-size: 18px">@review.ReviewDate
+                        <p>
+                    <button onclick="window.location='/Review/Delete/@review.Id'" class="delete-review-btn" style="width: 100%">Видалити</button>
+                    </p>
+                    </span>
+                </div>
+                <hr>
+        }
+        </div>
+    
+
+</div>

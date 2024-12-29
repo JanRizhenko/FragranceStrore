@@ -1,0 +1,63 @@
+﻿@using CourseWork2.EFModels;
+
+@model Customer
+
+@{
+    ViewData["Title"] = "Add Customer";
+}
+<h2>Add Customer</h2>
+<div class="customer-input">
+    <form asp-action="Create" method="post">
+        <div class="form-group">
+            <label asp-for="CustomerName">First Name</label>
+            <input asp-for="CustomerName" class="form-control" />
+            <span asp-validation-for="CustomerName" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="CustomerSurname">Last Name</label>
+            <input asp-for="CustomerSurname" class="form-control" />
+            <span asp-validation-for="CustomerSurname" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="PhoneNumber">Phone Number</label>
+            <input asp-for="PhoneNumber" class="form-control" placeholder="+1234567890" />
+            <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="CustomerEmail">Email</label>
+            <input asp-for="CustomerEmail" class="form-control" placeholder="example@example.com" type="email" />
+            <span asp-validation-for="CustomerEmail" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="CountryDelivery">Country</label>
+            <input asp-for="CountryDelivery" class="form-control" />
+            <span asp-validation-for="CountryDelivery" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="StateDelivery">State</label>
+            <input asp-for="StateDelivery" class="form-control" />
+            <span asp-validation-for="StateDelivery" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="CityDelivery">City</label>
+            <input asp-for="CityDelivery" class="form-control" />
+            <span asp-validation-for="CityDelivery" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="AddressDelivery">Address</label>
+            <textarea asp-for="AddressDelivery" class="form-control"></textarea>
+            <span asp-validation-for="AddressDelivery" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <input type="submit" value="Submit" class="btn btn-primary" />
+        </div>
+    </form>
+</div>

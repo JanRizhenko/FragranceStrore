@@ -1,0 +1,52 @@
+﻿@using CourseWork2.EFModels
+
+@model Brand
+
+@{
+}
+
+<div class="details">
+    <div class="details-info">
+        <img class="brand-description-logo" style="margin: 0 25px 0 0" src="@Model.BrandLogo" alt="Error" />
+
+        <div class="details-fragrance-info">
+            <a>
+                <div class="description-brand">
+                    <p class="description-fragrance">
+                        @Model.BrandName
+                    </p>
+                </div>
+            </a>
+
+            <p class="detail-p">
+                <span class="detail">Країна:</span>
+                <span class="detail-description">@Model.BrandCountry</span>
+            </p>
+
+            <p class="detail-p">
+                <span class="detail">Засновник:</span>
+                <span class="detail-description">@Model.BrandFounder</span>
+            </p>
+
+            <p class="detail-p">
+                <span class="detail">Дата заснування:</span>
+                <span class="detail-description">@Model.BrandCreationDate</span>
+            </p>
+
+            <p class="detail-p">
+                <span class="detail">Адреса головного офісу:</span>
+                <span class="detail-description">@Model.BrandMainOfficeAddress, @Model.BrandCountry</span>
+            </p>
+            <p class="detail-p">
+                <span class="detail">Офіційний сайт бренду:</span>
+                <span class="detail-description"><a>@Model.BrandSite</a></span>
+            </p>
+            <p style="margin: 25px 0 0 0">
+                <span style="font-size:12px;color:grey">ID бренду:</span>
+                <span style="font-size:14px;color:grey;">@Model.Id</span>
+            </p>
+            
+            <button onclick="window.location='/Brand/Delete/@Model.Id'" class="remove-brand">Видалити бренд</button>
+        </div>
+    </div>
+</div>

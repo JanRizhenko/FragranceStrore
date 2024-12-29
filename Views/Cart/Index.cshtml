@@ -1,0 +1,138 @@
+﻿@model CustomerReviews
+
+
+<p style="font-size: 34px; font-weight: bold; width:100vw; padding: 5px 10vw;">Кошик</p>
+<div style="width:100vw; padding: 25px 10vw; display: flex">
+    @{if (Model.Carts != null && Model.Carts.Count > 0)
+        {
+            <div class="cart">
+                @foreach (var cartItem in Model.Carts)
+                {
+                    <hr />
+                    <div class="cart-fragrance">
+                        <span class="cart-fragrance-short-info">
+                            @if (cartItem.Fragrance?.FragrancePhoto != null)
+                            {
+                                <img src="@Url.Content(cartItem.Fragrance.FragrancePhoto)" alt="Fragrance Photo" width="150" height="150" />
+                            }
+                            else
+                            {
+                                <img src="@Url.Content("~/images/no-image.png")" alt="No Photo" width="100" height="100" />
+                            }
+                            <span>
+                                @if (cartItem.Fragrance != null)
+                                {
+                                    <strong>@cartItem.Fragrance.Brand?.BrandName</strong>
+
+                                    <br />
+                                    <span>@cartItem.Fragrance.FragranceName</span>
+
+                                    <br />
+                                    <span>Рейтинг: @cartItem.Fragrance.Rating</span>
+                                }
+                            </span>
+
+                        </span>
+                        <span class="cart-quantity">
+                            <input readonly style="width: 20%; border: none;outline:none;" id="quantity-@cartItem.Id" type="text" name="cart-quantity" value="@cartItem.Quantity" min="1" />
+                        </span>
+                        <span class="cart-fragrance-price">
+                            @if (cartItem.Fragrance.DiscountPercentage == 0)
+                            {
+                                <div style="font-size:16px">Час додавання: @cartItem.DateAdded</div>
+                                <div>Час додавання: @cartItem.DateAdded</div>
+                            }
+                            else
+                            {
+                                <div style="font-size:16px">Час додавання: @cartItem.DateAdded</div>
+                                <span>Ціна: <span style="text-decoration: line-through">@cartItem.Fragrance.Price.ToString()$</span>
+                                    <span style="color:red">
+                                        @(cartItem.Fragrance?.Price - (cartItem.Fragrance?.Price * (cartItem.Fragrance?.DiscountPercentage / 100) ?? 0))
+                                    </span>$
+                                </span>
+
+                            }
+                            <div><button style ="width: 100%" onclick="window.location='/Cart/Delete/@cartItem.Id'">Видалити</button>
+
+                            </div>
+                        </span>
+
+                    </div>
+                    <hr />
+                }
+            </div>
+
+            <div class="cart-send">
+                <div class="cart-p">
+                    <span>Товарів у кошику</span>
+                    <span style="font-weight:bold">@Model.Carts.Count()</span>
+                </div>
+                <div class="cart-p">
+                    <span>Сума замовлення</span>
+                    <span style="font-weight:bold">@Model.Carts.Sum(cartItem => (cartItem.Fragrance?.Price ?? 0) * cartItem.Quantity).ToString()$</span>
+                </div>
+
+                @{
+                    decimal totalDiscount = 0;
+                    foreach (var cart in Model.Carts)
+                    {
+                        totalDiscount += (decimal)((cart.Fragrance.DiscountPercentage / 100) * cart.Fragrance.Price) * (decimal)cart.Quantity;
+                    }
+
+            decimal totalAmount = Model.Carts.Sum(cartItem => ((decimal)(cartItem.Fragrance?.Price ?? 0)) * (decimal)cartItem.Quantity);
+            decimal finalAmount = totalAmount - totalDiscount;
+        }
+
+        @if (Model.Carts.FirstOrDefault(cartItem => cartItem.FragranceId != null)?.Fragrance?.DiscountPercentage > 0)
+        {
+            var newCartItem = Model.Carts.First(cartItem => cartItem.FragranceId != null);
+
+            <div class="cart-p">
+                <span>Загальна знижка</span>
+                <span style="font-weight:bold; color: red">
+                    -@totalDiscount.ToString()$
+                </span>
+            </div>
+            
+        }
+        <div class="cart-bp">
+            <span style="font-weight:bold">Сума до сплати</span>
+            <span style="font-weight:bold">@finalAmount.ToString()$</span>
+        </div>
+        <button id="order-btn" onclick="Chill()" class="add-order">Оформити замовлення</button>
+       
+        <div class="cart-of-customer">
+            <span style="font-size: 18px">Замовлення користувача:</span>
+            <span>
+                <select style="width: 100%" name="customer-select" id="customer-select">
+                    <option value="" disabled selected>Оберіть користувача</option>
+                    @foreach (var customer in Model.Customers)
+                    {
+                        <option value="@customer.Id">
+                                @customer.CustomerName @customer.CustomerSurname
+                            </option>
+                    }
+                </select>
+            </span>
+                </div>
+            </div>
+        }
+        else
+        {
+            <p style="font-size: 38px;">Ваш кошик порожній.</p>
+        }
+        
+    }
+</div>
+
+<script>
+        function Chill() {
+        let customer = document.getElementById("customer-select");
+        if (!customer.value) {
+            alert("Please select a customer before proceeding.");
+            return;
+        }
+        window.location = `/Cart/SendOrders/${customer.value}`;
+    }
+
+</script>

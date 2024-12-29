@@ -1,0 +1,32 @@
+﻿@model CustomerReviews
+
+@{
+}
+
+<div class="add-customer-btn-class" style="padding: 0 45px;">
+    <button onclick="window.location='Customer/Create'" class="find-input" style="font-size:24px">Додати користувача</button>
+</div>
+
+
+<hr>
+@foreach(var customer in Model.Customers)
+{
+    <div class="customers">
+        <div class="customer ">
+            <span class="customer-info">
+                <strong>
+                @customer.CustomerName @customer.CustomerSurname</strong><br />
+                @customer.CustomerEmail<br />
+                @customer.PhoneNumber<br />
+                @customer.CountryDelivery, @customer.StateDelivery, @customer.CityDelivery, @customer.AddressDelivery
+            </span>
+            <span class="customer-number-of-orders ms-auto">
+                <strong>Кількість замовлень:</strong> @customer.NumberOfOrders <br />
+                <strong>ID користувача:</strong> @customer.Id
+                <p onclick="window.location='/Customer/Delete/@customer.Id'" class="delete-customer-customers"><a>Видалити користувача</a></p>
+            </span>
+
+        </div>
+        <hr>
+    </div>
+}

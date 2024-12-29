@@ -1,0 +1,90 @@
+﻿@model Find
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="index-main">
+
+    <form asp-action="Index" method="post" onsubmit="return">
+        <div class="find-filters">
+            <div class="find-container">
+            
+                <div class="search-box">
+                    <input asp-for="Input" class="find-input" type="text" placeholder="Знайти..." />
+                    <input class="find" type="submit" value="🔍" />
+                </div>
+            
+            </div>
+            <div class="filter-group">
+                    <label>
+                    <input class="input-radio" type="radio" name="Gender" value="Для неї" />
+                        Для неї
+                    </label>
+
+                    <label>
+                    <input class="input-radio" type="radio" name="Gender" value="Для нього" />
+                        Для нього
+                    </label>
+
+                    <label>
+                    <input class="input-radio" type="radio" name="Gender" value="Унісекс" />
+                        Унісекс
+                    </label>
+
+            </div>
+
+            <div class="filter-group">
+                <label>
+                    Ціна від:
+                    <input type="number"
+                           name="PriceMin"
+                           min="0"
+                           max="@Model.Fragrances.Any() ? Model.Fragrances.Max(f => f.Price * (1 - f.DiscountPercentage / 100)) : 0"
+                           step="1"
+                           value="@Model.Fragrances.Any() ? Model.Fragrances.Min(f => f.Price * (1 - f.DiscountPercentage / 100)) : 0" />
+                </label>
+                <label>
+                    до:
+                    <input type="number"
+                           name="PriceMax"
+                           min="0"
+                           max="@Model.Fragrances.Any() ? Model.Fragrances.Max(f => f.Price * (1 - f.DiscountPercentage / 100)) : 0"
+                           step="1"
+                           value="@Model.Fragrances.Any() ? Model.Fragrances.Max(f => f.Price * (1 - f.DiscountPercentage / 100)) : 0" />
+                </label>
+            </div>
+        </div>
+    </form>
+
+    <div class="add-fragrance-btn-class">
+        <button onclick="window.location='Fragrance/Create'" id="add-fragrance-btn" class="find-input" style="font-size:24px">Додати парфюм</button>
+    </div>
+    
+
+
+    <div class="shop-grid">
+    @foreach(var fragrance in Model.Fragrances)
+    {
+            <div onclick="window.location='Fragrance/Details/@fragrance.Id'" class="shop-item">
+                <a href="/Fragrance/Delete/@fragrance.Id" class="delete-fragrance">X</a>
+
+                <img class="shop-img" src="@fragrance.FragrancePhoto" alt="Error" title="@fragrance.Brand.BrandName @fragrance.FragranceName"/>
+                <p class="shop-rating">@fragrance.Rating/5</p>
+                <p class="shop-brand">@fragrance.Brand.BrandName</p>
+                <p class="shop-name">@fragrance.FragranceName</p>
+                <p class="shop-description">@fragrance.FragranceDescription</p>
+                @if (fragrance.DiscountPercentage > 0)
+                {
+                    <p class="shop-price-discounted">@fragrance.Price$</p>
+                    <p class="shop-price-discount">Акція! - @((fragrance.Price * (1 - fragrance.DiscountPercentage / 100)))$</p>
+                }
+                else
+                {
+                    <p class="shop-price">@fragrance.Price$</p>
+                }
+                <a href="/Cart/Create/@fragrance.Id"><button class="add-to-cart">Додати в кошик</button></a>
+            </div>
+    }
+    </div>
+</div>

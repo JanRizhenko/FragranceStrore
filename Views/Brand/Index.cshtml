@@ -1,0 +1,30 @@
+﻿@model Find
+
+@{
+}
+<h1>@ViewData["Title"]</h1>
+
+
+<div class="find-filters">
+    <div class="find-container">
+        <form asp-action="Brands" method="post" onsubmit="return validateInput()">
+            <input asp-for="Input" class="find-input" type="text" placeholder="Знайти..." />
+            <input class="find" type="submit" value="🔍" />
+        </form>
+    </div>
+</div>
+
+<div class="add-brand-btn-class" style="padding: 0 45px;">
+    <button onclick="window.location='Brand/Create'" class="find-input" style="font-size:24px">Додати бренд</button>
+</div>
+
+<div class="brands">
+    @foreach(var brand in Model.Brands)
+    {
+        
+        <div onclick="window.location='@Url.Action("Details", "Brand", new { id = brand.Id })'" class="shop-item">
+            <a href="Brand/Delete/@brand.Id" class="delete-brand">X</a>
+            <a><img class="brand-logo" src="@brand.BrandLogo" alt="Error" title="@brand.BrandName" /></a>
+        </div>
+    }
+</div>
