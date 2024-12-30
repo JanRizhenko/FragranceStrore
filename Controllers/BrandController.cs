@@ -25,6 +25,26 @@ namespace CourseWork2.Controllers
             };
             return View(model);
         }
+        [HttpPost]
+        public ActionResult Index(Find model)
+        {
+            var query = _context.Brands.AsQueryable();
+
+            if (!string.IsNullOrEmpty(model.Input))
+            {
+                int parsedId;
+                bool isIdSearch = int.TryParse(model.Input, out parsedId);
+
+                query = query.Where(brand =>
+                    brand.BrandName.Contains(model.Input) ||
+                    brand.BrandCountry.Contains(model.Input) ||
+                    brand.BrandFounder.Contains(model.Input) ||
+                    (isIdSearch && brand.Id == parsedId));
+            }
+
+            model.Brands = query.ToList();
+            return View(model);
+        }
         public ActionResult Details(int id)
         {
             Brand brand = _context.Brands.FirstOrDefault(b => b.Id == id);

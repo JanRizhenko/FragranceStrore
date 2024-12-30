@@ -92,7 +92,6 @@ p
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 15px;
-    border: 1px solid red;
     grid-auto-rows: auto;
 }
 .shop-rating 
