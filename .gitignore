@@ -397,6 +397,7 @@ FodyWeavers.xsd
 *.msp
 
 #Course Work Diary and Report
+*.pptx
 *.txt
 *.pdf
 
