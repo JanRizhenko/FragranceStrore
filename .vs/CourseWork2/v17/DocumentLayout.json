@@ -3,24 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\Admin\\Desktop\\VisualStudio\\CourseWork2\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5984E9F7-DD40-46A7-ABF0-5B0045E7D393}|CourseWork2.csproj|c:\\users\\admin\\desktop\\visualstudio\\coursework2\\efmodels\\cart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5984E9F7-DD40-46A7-ABF0-5B0045E7D393}|CourseWork2.csproj|solutionrelative:efmodels\\cart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5984E9F7-DD40-46A7-ABF0-5B0045E7D393}|CourseWork2.csproj|c:\\users\\admin\\desktop\\visualstudio\\coursework2\\controllers\\brandcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5984E9F7-DD40-46A7-ABF0-5B0045E7D393}|CourseWork2.csproj|solutionrelative:controllers\\brandcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5984E9F7-DD40-46A7-ABF0-5B0045E7D393}|CourseWork2.csproj|c:\\users\\admin\\desktop\\visualstudio\\coursework2\\controllers\\fragrancecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5984E9F7-DD40-46A7-ABF0-5B0045E7D393}|CourseWork2.csproj|solutionrelative:controllers\\fragrancecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5984E9F7-DD40-46A7-ABF0-5B0045E7D393}|CourseWork2.csproj|c:\\users\\admin\\desktop\\visualstudio\\coursework2\\views\\brand\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{5984E9F7-DD40-46A7-ABF0-5B0045E7D393}|CourseWork2.csproj|solutionrelative:views\\brand\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5984E9F7-DD40-46A7-ABF0-5B0045E7D393}|CourseWork2.csproj|c:\\users\\admin\\desktop\\visualstudio\\coursework2\\views\\fragrance\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{5984E9F7-DD40-46A7-ABF0-5B0045E7D393}|CourseWork2.csproj|solutionrelative:views\\fragrance\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{5984E9F7-DD40-46A7-ABF0-5B0045E7D393}|CourseWork2.csproj|c:\\users\\admin\\desktop\\visualstudio\\coursework2\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{5984E9F7-DD40-46A7-ABF0-5B0045E7D393}|CourseWork2.csproj|solutionrelative:wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,22 +14,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\VisualStudio\\CourseWork2\\Views\\Brand\\Index.cshtml",
-              "RelativeDocumentMoniker": "Views\\Brand\\Index.cshtml",
-              "ToolTip": "C:\\Users\\Admin\\Desktop\\VisualStudio\\CourseWork2\\Views\\Brand\\Index.cshtml",
-              "RelativeToolTip": "Views\\Brand\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-29T23:22:17.99Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
@@ -53,53 +23,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Cart.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\VisualStudio\\CourseWork2\\EFModels\\Cart.cs",
-              "RelativeDocumentMoniker": "EFModels\\Cart.cs",
-              "ToolTip": "C:\\Users\\Admin\\Desktop\\VisualStudio\\CourseWork2\\EFModels\\Cart.cs",
-              "RelativeToolTip": "EFModels\\Cart.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-29T23:45:24.526Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\VisualStudio\\CourseWork2\\Views\\Fragrance\\Index.cshtml",
-              "RelativeDocumentMoniker": "Views\\Fragrance\\Index.cshtml",
-              "ToolTip": "C:\\Users\\Admin\\Desktop\\VisualStudio\\CourseWork2\\Views\\Fragrance\\Index.cshtml",
-              "RelativeToolTip": "Views\\Fragrance\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-29T23:22:27.926Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "FragranceController.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\VisualStudio\\CourseWork2\\Controllers\\FragranceController.cs",
-              "RelativeDocumentMoniker": "Controllers\\FragranceController.cs",
-              "ToolTip": "C:\\Users\\Admin\\Desktop\\VisualStudio\\CourseWork2\\Controllers\\FragranceController.cs",
-              "RelativeToolTip": "Controllers\\FragranceController.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAAowCEAAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-29T23:22:14.057Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "BrandController.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\VisualStudio\\CourseWork2\\Controllers\\BrandController.cs",
-              "RelativeDocumentMoniker": "Controllers\\BrandController.cs",
-              "ToolTip": "C:\\Users\\Admin\\Desktop\\VisualStudio\\CourseWork2\\Controllers\\BrandController.cs",
-              "RelativeToolTip": "Controllers\\BrandController.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAuwCwAAAAqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-29T23:21:04.169Z",
+              "Title": "site.css",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\VisualStudio\\CourseWork2\\wwwroot\\css\\site.css",
+              "RelativeDocumentMoniker": "wwwroot\\css\\site.css",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\VisualStudio\\CourseWork2\\wwwroot\\css\\site.css",
+              "RelativeToolTip": "wwwroot\\css\\site.css",
+              "ViewState": "AgIAAC8BAAAAAAAAAAAAABQAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-01-22T21:54:17.924Z",
               "EditorCaption": ""
             }
           ]
